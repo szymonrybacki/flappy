@@ -94,6 +94,11 @@ def main():
     bird = Bird(assets.images["bird"])
     pipes = []
     score = 0
+    try:
+        with open("best.txt", "r") as f:
+            best = int(f.read())
+    except:
+        best = 0 
     last_pipe = pygame.time.get_ticks()
     game_over = False
     
@@ -145,10 +150,16 @@ def main():
         
         score_text = font.render(f'Score: {score}', True, BLACK)
         screen.blit(score_text, (10, 10))
+        best_text = font.render(f'Record: {best}', True, BLACK)
+        screen.blit(best_text, (10, 40))
         
         if game_over:
             game_over_text = font.render('Game Over! Press SPACE to restart', True, BLACK)
             screen.blit(game_over_text, (SCREEN_WIDTH // 2 - 180, SCREEN_HEIGHT // 2))
+            if score > best:
+                best = score
+                with open("best.txt", "w") as f:
+                    f.write(str(best))
         
         pygame.display.update()
 
