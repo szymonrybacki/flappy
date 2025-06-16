@@ -1,0 +1,4 @@
+5;PlayerKacper
+1;kacper
+1;kacper
+0;kacper
