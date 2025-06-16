@@ -32,7 +32,6 @@ class AssetLoader:
     def load(self):
         try:
             self.images["background"] = pygame.image.load("background.png").convert()
-            # ZMIANA: Ładowanie i skalowanie tła menu
             menu_bg_raw = pygame.image.load("tlo2.png").convert()
             self.images["menu_background"] = pygame.transform.scale(menu_bg_raw, (SCREEN_WIDTH, SCREEN_HEIGHT))
             
@@ -43,7 +42,6 @@ class AssetLoader:
             ]
             self.images["pipe"] = pygame.image.load("pipe.png").convert_alpha()
             
-            # ZMIANA: Zmniejszenie rozmiarów czcionek, aby pasowały do interfejsu
             self.fonts["menu"] = pygame.font.Font("Pacifico-Regular.ttf", 30)
             self.fonts["button"] = pygame.font.Font("Pacifico-Regular.ttf", 25)
             self.fonts["label"] = pygame.font.Font("Pacifico-Regular.ttf", 20)
@@ -60,7 +58,6 @@ class AssetLoader:
         self.images["bird_frames"] = [bird_placeholder] * 3
         pipe_placeholder = pygame.Surface((52, 320)); pipe_placeholder.fill((0, 128, 0))
         self.images["pipe"] = pipe_placeholder
-        # ZMIANA: Zmniejszone rozmiary czcionek awaryjnych
         self.fonts["menu"] = pygame.font.SysFont('Arial', 30)
         self.fonts["button"] = pygame.font.SysFont('Arial', 25)
         self.fonts["label"] = pygame.font.SysFont('Arial', 20)
@@ -201,7 +198,6 @@ def run_high_scores(screen, clock, assets):
         title_text = assets.fonts["menu"].render("Top 10", True, WHITE)
         screen.blit(title_text, title_text.get_rect(centerx=SCREEN_WIDTH//2, y=20))
         
-        # ZMIANA: Mniejszy odstęp między wierszami
         for i, (score, name) in enumerate(scores):
             score_text = assets.fonts["label"].render(f"{i+1}. {name}: {score}", True, WHITE)
             screen.blit(score_text, (40, 90 + i * 30))
