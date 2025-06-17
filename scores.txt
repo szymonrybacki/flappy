@@ -1,3 +1,4 @@
+43;Szymuś
 21;GraczSzymek
 13;Szymek
 12;Szymek
@@ -7,4 +8,3 @@
 4;Gracz
 1;kacper
 1;kacper
-1;Gracz
