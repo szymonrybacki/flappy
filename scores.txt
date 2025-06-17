@@ -1,10 +1,10 @@
+21;GraczSzymek
+13;Szymek
+12;Szymek
+10;Szymek
+9;Szymek
 5;PlayerKacper
 4;Gracz
 1;kacper
 1;kacper
 1;Gracz
-0;kacper
-0;Gracz
-0;Gracz
-0;Gracz
-0;Gracz
